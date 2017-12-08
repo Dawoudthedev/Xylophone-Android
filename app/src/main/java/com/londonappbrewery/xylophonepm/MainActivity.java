@@ -1,10 +1,14 @@
 package com.londonappbrewery.xylophonepm;
 
+import android.content.Context;
+import android.inputmethodservice.InputMethodService;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.PointerIcon;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private final int PRIORITY = 0;
     private final float NORMAL_PLAY_RATE = 1.0f;
 
+
     // TODO: Add member variables here
     private SoundPool mSoundPool;
     private int mCSoundId;
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private int mGSoundId;
     private int mASoundId;
     private int mBSoundId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         mGSoundId = mSoundPool.load(getApplicationContext(), R.raw.note5_g, 1);
         mASoundId = mSoundPool.load(getApplicationContext(), R.raw.note6_a, 1);
         mBSoundId = mSoundPool.load(getApplicationContext(), R.raw.note7_b, 1);
+
+        //changed the pointer to a hand
+        PointerIcon.getSystemIcon(null, PointerIcon.TYPE_HAND);
 
 
 
